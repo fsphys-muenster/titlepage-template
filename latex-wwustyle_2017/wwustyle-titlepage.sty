@@ -1,5 +1,5 @@
-\ProvidesPackage{wwustyle}
-% Package wwustyle
+\ProvidesPackage{wwustyle-titlepage}
+% Package wwustyle-titlepage
 %
 % A style file following the corporate design of the WWU
 % Muenster.
@@ -34,7 +34,7 @@
 %                           crowded.
 % Version: 0.1 (13.02.2010) Initial version
 %
-% Usage:    Just put \usepackage{wwustyle} in the header of your tex
+% Usage:    Just put \usepackage{wwustyle-titlepage} in the header of your tex
 %           file, thats all!
 %           You may reset the main color by using COLORCODE
 %           as an option to the package, where COLORCODE is the
@@ -98,7 +98,7 @@
     \def\reserved@b{#2}%
     \ifx\reserved@a\reserved@b
     \else
-        \PackageWarning{wwustyle}{Background for font color #1 not available. Background color changed to #2}{}%
+        \PackageWarning{wwustyle-titlepage}{Background for font color #1 not available. Background color changed to #2}{}%
     \fi
 }
 \DeclareOption{pantoneblack7}{%
