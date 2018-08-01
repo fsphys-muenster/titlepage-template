@@ -4,6 +4,7 @@
 tex/*.pdf
 # ignore build files
 latex_wwu_ppt*
+titlepage.pdf
 
 ### .gitignore template for TeX from GitHub
 ## Core latex/pdflatex auxiliary files:
