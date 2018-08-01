@@ -13,13 +13,30 @@
 
 %% ========= Required Packages =============
 % for the graphics
-\RequirePackage{tikz}
-\RequirePackage{xxcolor}
-
-\RequirePackage[T1]{fontenc}
-%% use MetaRoman Normal as the standard non-serif font
-\renewcommand{\sfdefault}{fMt}
 \RequirePackage{microtype}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+
+\newcommand*{\wwu@meta}{%
+	\fontspec{MetaOffcPro}[Path=fonts/,
+		Extension=.ttf,
+		UprightFont=*-Norm,
+		UprightFeatures={
+			SmallCapsFont={MetaScOffcPro-Norm}
+		},
+		ItalicFont=*-NormIta,
+		ItalicFeatures={
+			SmallCapsFont={MetaScOffcPro-NormIta}
+		},
+		BoldFont=*-Bold,
+		BoldFeatures={
+			SmallCapsFont={MetaScOffcPro-Bold}
+		},
+		BoldItalicFont=*-Bold,
+		BoldItalicFeatures={FakeSlant},
+	]%
+}
 
 %\definecolor{pantoneblack7}{RGB}{62,62,59}
 \definecolor{pantoneblack7}{RGB}{102,102,102}
@@ -66,11 +83,25 @@
 \DeclareOption{english}{
 \switchToEnglish
 }
+
+\newif\if@manualfonts
+\DeclareOption{manualfonts}{
+	\@manualfontstrue
+	\renewcommand*{\wwu@meta}{}
+}
+
 \newcommand{\claimTitle}{\claim}
 \newcommand{\logoTitle}{\wwulogo}
 \ProcessOptions\relax
 
-\definecolor{maincolor}{named}{\bg@maincolor}
+% save the specified color as “maincolor”
+\colorlet{maincolor}{\bg@maincolor}
+
+% don’t do font setup if “manualfonts” was specified
+\if@manualfonts
+\else
+	\RequirePackage{fontspec}
+\fi
 
 
 %% ========= Images and Graphics ============
@@ -104,7 +135,7 @@
 \newcommand{\make@aiv@title}{ %replace standard LaTeX-command
 \begin{titlepage}
  {
- \sf
+ \wwu@meta
  \setlength{\leftmargin}{0mm}%
  \setlength{\unitlength}{1mm}
  \begin{tikzpicture}[remember picture,overlay]

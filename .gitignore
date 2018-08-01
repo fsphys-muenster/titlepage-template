@@ -1,3 +1,10 @@
+# don’t accidentally commit font files
+*/fonts/Meta*
+# don’t include compiled template PDF files
+tex/*.pdf
+# ignore build files
+latex_wwu_ppt*
+
 ### .gitignore template for TeX from GitHub
 ## Core latex/pdflatex auxiliary files:
 *.aux
