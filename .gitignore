@@ -3,10 +3,12 @@
 # don’t include compiled template PDF files
 tex/*.pdf
 # ignore build files
-latex_wwu_ppt*
+latex_wwu_titlepage*
 titlepage.pdf
 
 ### .gitignore template for TeX from GitHub
+### https://github.com/github/gitignore/blob/master/TeX.gitignore
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
