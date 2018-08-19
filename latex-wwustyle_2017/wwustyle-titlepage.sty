@@ -113,13 +113,12 @@
     \set@wwu@maincolor{pantone390}
 }
 
-\newcommand{\claimText}{}
-\newcommand{\switchToEnglish}
-{
-\renewcommand{\claimText}{_eng}
+\newcommand*{\claimText}{}
+\newcommand*{\switchToEnglish}{
+	\renewcommand*{\claimText}{_eng}
 }
 \DeclareOption{english}{
-\switchToEnglish
+	\switchToEnglish
 }
 
 \newif\if@manualfonts
@@ -128,16 +127,15 @@
 	\renewcommand*{\wwu@meta}{}
 }
 
-\newcommand{\claimTitle}{\claim}
-\newcommand{\logoTitle}{\wwulogo}
+\newcommand*{\claimTitle}{\claim}
+\newcommand*{\logoTitle}{\wwulogo}
 \ProcessOptions\relax
 
 % save the specified color as “maincolor”
 \colorlet{maincolor}{\main@color}
 
 % don’t do font setup if “manualfonts” was specified
-\if@manualfonts
-\else
+\if@manualfonts\else
 	\RequirePackage{fontspec}
 \fi
 
@@ -145,8 +143,8 @@
 %% ========= Images and Graphics ============
 
 % the claim with \includegraphics
-\newcommand{\claim}{%
-    \strut\rlap{\includegraphics{wwustyle/WWU_Claim_2017\claimText_4c}}%
+\newcommand*{\claim}{%
+	\strut\rlap{\includegraphics{wwustyle/WWU_Claim_2017\claimText_4c}}%
 }
 
 % WWU logo with \includegraphics
@@ -157,12 +155,12 @@
 % define the institute logo command
 \newcommand{\@institutelogo}{}
 \newcommand{\institutelogo}[1]{%
-  \renewcommand{\@institutelogo}{#1}
+	\renewcommand{\@institutelogo}{#1}
 }
 
 \providecommand{\@subtitle}{}
 \providecommand{\subtitle}[1]{%
-  \renewcommand{\@subtitle}{#1}
+	\renewcommand{\@subtitle}{#1}
 }
 
 \renewcommand*{\maketitle}{\make@aiv@title}
