@@ -50,7 +50,7 @@ mkdir -p en/template/
 
 cp -r "$fontdir/" "$texdir/wwustyle/" \
 	"$texdir"/*.sty \
-	"$texdir/titlepage.tex" \
+	"$texdir/titelseite.tex" \
 	'de/vorlage/'
 cp -r "$fontdir/" "$texdir/wwustyle/" \
 	"$texdir"/*.sty \
@@ -58,7 +58,7 @@ cp -r "$fontdir/" "$texdir/wwustyle/" \
 	'en/template/'
 
 cp -r de/vorlage/ de/beispiele/
-mv de/beispiele/titlepage.tex de/beispiele/titlepage.tex
+mv de/beispiele/titelseite.tex de/beispiele/titlepage.tex
 cp -r en/template/ en/examples/
 
 rm -r "$texdir/"
