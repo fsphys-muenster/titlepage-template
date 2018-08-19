@@ -164,7 +164,7 @@
 }
 
 \renewcommand*{\maketitle}{\make@aiv@title}
-\newcommand{\make@aiv@title}{ %replace standard LaTeX-command
+\newcommand{\make@aiv@title}{
 \begin{titlepage}
  {
  \wwu@meta
@@ -248,6 +248,10 @@
     % yshift: 14mm - 3mm (claim PDF file padding) = 11mm
     \node [xshift=12.75mm,yshift=11mm, inner sep=0, anchor=south west] at (current page.south west)
     (claim) {\claimTitle};
+    \node [xshift=-1.4cm,yshift=1.4cm, anchor=south east] at (current page.south east)
+    [inner sep=0mm] {
+      \@institutelogo
+    };
   \end{tikzpicture}
   }
 \end{titlepage}
