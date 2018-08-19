@@ -22,6 +22,28 @@
 \RequirePackage{graphicx}
 % usually also \RequirePackage{fontspec}, see below
 
+% check if DIN A4 paper is used (allowing for some error/rounding)
+\newif\ifwwu@aivpaper
+% A4 width: 210mm
+\ifdim 209.9mm < \paperwidth
+\ifdim \paperwidth < 210.1mm
+% A4 height: 297mm
+\ifdim 296.9mm < \paperheight
+\ifdim \paperheight < 297.1mm
+	\wwu@aivpapertrue
+\fi\fi\fi\fi
+
+% print a warning if not using DIN A4 paper
+\ifwwu@aivpaper\else
+	\PackageWarning{wwustyle-titlepage}{%
+		You are not using DIN A4 paper size!\MessageBreak%
+		Instead, the paper size is set to\MessageBreak%
+		\the\paperwidth\space by \the\paperheight.\MessageBreak%
+		This template is only valid for A4 paper\MessageBreak%
+		(spacing will be incorrect).%
+	}
+\fi
+
 \newcommand*{\wwu@meta}{%
 	\fontspec{MetaOffcPro}[Path=fonts/,
 		Extension=.ttf,
@@ -143,11 +165,7 @@
   \renewcommand{\@subtitle}{#1}
 }
 
-% force DIN-A4 paper
-\RequirePackage{geometry}
-\geometry{a4paper}
 \renewcommand*{\maketitle}{\make@aiv@title}
-
 \newcommand{\make@aiv@title}{ %replace standard LaTeX-command
 \begin{titlepage}
  {
