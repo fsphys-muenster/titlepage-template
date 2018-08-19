@@ -1,9 +1,12 @@
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{wwustyle-titlepage}[%
 	2018/07/31 title pages using the WWU corporate design%
 ]
-% Usage: Just put \usepackage{wwustyle-titlepage} in the header of your .tex
+% Usage: Just put \usepackage{wwustyle-titlepage} in the preamble of your .tex
 %        file!
-%        Color variants (see the Corporate design manual
+%        Available options:
+%        - english: uses the English claim (“living.knowledge”)
+%        – Color variants (see the Corporate design manual
 %          https://sso.uni-muenster.de/intern/marketing/corporatedesign/cdmanual.html):
 %          pantoneblack7 (“black”)
 %          pantone234 (“magenta”)
@@ -13,10 +16,11 @@
 %          pantone3135 (“green”)
 %          pantone369 (“light green”)
 %          pantone390 (“olive green”)
+%
 % Maintainers: Simon May (simon.may@uni-muenster.de)
 %              Fachschaft Physik (fsphys@uni-muenster.de)
 
-%% ========= Required Packages =============
+%% =============== required packages ============================
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}

@@ -1,4 +1,29 @@
-\documentclass[a4paper]{scrartcl}
+% !TeX program = lualatex
+% NOTE: This file must be run using xelatex or lualatex!
+
+% At this time, the template can only be used with the paper
+% format DIN A4 (portrait). Other formats will cause
+% incorrect spacing on the title page!
+\documentclass[a4paper, english]{scrartcl}
+% language setting
+\usepackage{polyglossia}
+\setmainlanguage{english}
+
+% Offizielles WWU-LaTeX-Paket für Titelseiten: wwustyle-titlepage
+% Die Verwendung von wwustyle erfordert xelatex oder lualatex
+% (aufgrund der verwendeten Schriftarten).
+% Bei Fragen hierzu wenden Sie sich an fsphys@uni-muenster.de
+% Mögliche Optionen:
+% - english: uses the English claim (“living.knowledge”)
+% - Color variants:
+%   pantoneblack7 (“black”)
+%   pantone234 (“magenta”)
+%   pantone7462 (“dark blue”)
+%   pantone312 (“light blue”)
+%   pantone315 (“dark green/blue”)
+%   pantone3135 (“green”)
+%   pantone369 (“light green”)
+%   pantone390 (“olive green”)
 \usepackage[english, pantone312]{wwustyle-titlepage}
 
 \title{This is where the title of the\\printed product will appear.}
