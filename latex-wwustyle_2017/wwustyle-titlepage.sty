@@ -17,11 +17,10 @@
 %              Fachschaft Physik (fsphys@uni-muenster.de)
 
 %% ========= Required Packages =============
-% for the graphics
-\RequirePackage{microtype}
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
+% usually also \RequirePackage{fontspec}, see below
 
 \newcommand*{\wwu@meta}{%
 	\fontspec{MetaOffcPro}[Path=fonts/,
@@ -162,18 +161,19 @@
     \node [xshift=11.5mm,yshift=-2.5cm,inner sep=0,anchor=west] at (current page.north west)
     {\logoTitle};
     %% the title
-    \node (greaternode) [xshift=1.4cm,yshift=-7.86cm,anchor=base west] at (current page.north west)
-    [inner sep=0mm] {
-      \fontsize{26pt}{11pt}\selectfont\color{maincolor}};%\textgreater};
     \node (titlenode) [xshift=1.85cm,yshift=-7.2cm,anchor=base west] at (current page.north west)
     [inner sep=0mm,text width=16.45cm] {
+      % Font size: 26pt, line spacing: 11pt
+      % https://sso.uni-muenster.de/intern/marketing/corporatedesign/cdmanual.html
       \color{maincolor}
-      \fontsize{26pt}{28pt}\selectfont\textls[15]{\llap{> }\@title}\par
+      \fontsize{26pt}{29pt}\selectfont\llap{> }\@title\par
     };
     \node [xshift=1.85cm,yshift=-10.65cm, anchor=south west] at (current page.north west)
     [inner sep=0,text width=16.45cm, minimum width=16.45cm] {
+      % Font size: 19.5pt, line spacing: 11pt
+      % https://sso.uni-muenster.de/intern/marketing/corporatedesign/cdmanual.html
       \color{pantoneblack7}
-      \fontsize{19.5pt}{21pt}\selectfont
+      \fontsize{19.5pt}{22.5pt}\selectfont
       \@subtitle\par
     };
     %% the 1. rectangle
