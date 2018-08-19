@@ -2,9 +2,10 @@
 */fonts/Meta*
 # don’t include compiled template PDF files
 tex/*.pdf
+titlepage.pdf
 # ignore build files
 latex_wwu_titlepage*
-titlepage.pdf
+
 
 ### .gitignore template for TeX from GitHub
 ### https://github.com/github/gitignore/blob/master/TeX.gitignore
